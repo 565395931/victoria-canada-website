@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <filter id="soft-blue-edge" x="-45%" y="-45%" width="190%" height="190%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="0" stdDeviation="0.65" flood-color="#d8edff" flood-opacity="0.72"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="1.8" flood-color="#67aef5" flood-opacity="0.58"/>
+    </filter>
+  </defs>
+  <path d="M5.1 4.3c-.76-.31-1.49.42-1.2 1.19l7 18.3c.28.75 1.28.88 1.75.23l4.05-5.65 6.95-1.75c.85-.22.94-1.39.14-1.72L5.1 4.3Z" fill="#090d13" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" filter="url(#soft-blue-edge)"/>
+</svg>

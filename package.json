@@ -1,0 +1,14 @@
+{
+  "name": "victoria-canada-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static website for VICTORIA Canada",
+  "scripts": {
+    "dev": "node server.js",
+    "deploy": "wrangler deploy",
+    "check": "node scripts/check-site.js"
+  },
+  "devDependencies": {
+    "wrangler": "4.86.0"
+  }
+}
