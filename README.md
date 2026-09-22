@@ -46,4 +46,4 @@ For a no-command alternative, create a Cloudflare Pages Direct Upload project an
 
 ## Form behavior
 
-The request form validates entries and opens the visitor's email application with a prepared message addressed to `lyneshou79@gmail.com`. The website does not store submissions. A serverless form endpoint can be added later if visitors need to submit without a configured email app.
+The request form posts to `/api/contact`. The Worker sends a notification from `website@victoria-gateway.com` to the verified destination inbox, with the visitor's business email set as Reply-To. Submissions are not stored by the website.

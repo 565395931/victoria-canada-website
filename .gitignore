@@ -3,3 +3,11 @@ node_modules/
 *.zip
 design-source/
 dist/
+.openai/
+design-system/
+.lighthouse-final.json
+lighthouse-all-pages.json
+premium-audit.json
+*.log
+Thumbs.db
+.DS_Store

@@ -9,16 +9,43 @@
       content="VICTORIA Canada connects Canadian demand with Chinese manufacturing through sourcing, market entry and local business support."
     />
     <title>VICTORIA Canada | Cross-Border Business Services</title>
-    <link rel="icon" href="./assets/images/logo-transparent.png" type="image/png" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="/assets/images/favicon-64.png" type="image/png" />
+    <script>
+      (() => {
+        const legacyRoute = location.hash.replace(/^#\/?/, "").replace(/\/$/, "");
+        const route = legacyRoute || location.pathname.replace(/^\/+|\/+$/g, "");
+        const routeImages = {
+          products: "/assets/images/products-v5-define-requirement.webp",
+          "canadian-buyers": "/assets/images/buyers-hero-v4.webp",
+          "chinese-manufacturers": "/assets/images/manufacturers-hero-v2.webp",
+          "market-insights": "/assets/images/market-insights-hero.webp",
+          request: "/assets/images/request-hero-1920.webp"
+        };
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.fetchPriority = "high";
+        if (!route) {
+          preload.href = "/assets/images/home-hero-1920.webp";
+          preload.imageSrcset = "/assets/images/home-hero-1280.webp 1280w, /assets/images/home-hero-1920.webp 1920w, /assets/images/home-hero-2560.webp 2560w";
+          preload.imageSizes = "100vw";
+        } else if (routeImages[route]) {
+          preload.href = routeImages[route];
+        } else {
+          return;
+        }
+        document.head.append(preload);
+      })();
+    </script>
+    <link rel="stylesheet" href="/styles.min.css?v=20260922-1" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="nav-hover-zone" aria-hidden="true"></div>
       <div class="nav-shell">
-        <a class="brand" href="#/" aria-label="VICTORIA Canada home">
-          <img class="brand-logo" src="./assets/images/logo-transparent.png" alt="VICTORIA Canada" width="1265" height="1243" decoding="async" />
+        <a class="brand" href="/" aria-label="VICTORIA Canada home">
+          <img class="brand-logo" src="/assets/images/logo-64.webp" srcset="/assets/images/logo-64.webp 64w, ./assets/images/logo-128.webp 128w" sizes="58px" alt="VICTORIA Canada" width="128" height="126" decoding="async" />
           <span class="header-brand-word" aria-hidden="true">VICTORIA</span>
         </a>
 
@@ -29,17 +56,17 @@
         </button>
 
         <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
-          <a class="mobile-menu-brand" href="#/" aria-label="VICTORIA Canada home">
-            <img src="./assets/images/logo-transparent.png" alt="" width="1265" height="1243" decoding="async" />
+          <a class="mobile-menu-brand" href="/" aria-label="VICTORIA Canada home">
+            <img src="/assets/images/logo-64.webp" srcset="/assets/images/logo-64.webp 64w, ./assets/images/logo-128.webp 128w" sizes="58px" alt="" width="128" height="126" decoding="async" />
             <span>VICTORIA Canada</span>
           </a>
-          <a href="#/" data-route="home" data-label="Home"><span class="nav-label">Home</span></a>
-          <a href="#/products" data-route="products" data-label="Products"><span class="nav-label">Products</span></a>
-          <a href="#/canadian-buyers" data-route="buyers" data-label="For Canadian Buyers"><span class="nav-label">For Canadian Buyers</span></a>
-          <a href="#/chinese-manufacturers" data-route="manufacturers" data-label="For Chinese Manufacturers"><span class="nav-label">For Chinese Manufacturers</span></a>
-          <a href="#/about" data-route="about" data-label="About VICTORIA Canada"><span class="nav-label">About VICTORIA Canada</span></a>
-          <a href="#/market-insights" data-route="insights" data-label="Market Insights"><span class="nav-label">Market Insights</span></a>
-          <a class="nav-cta" href="#/request" data-route="request" data-label="Submit Your Request"><span class="nav-label">Submit Your Request</span></a>
+          <a href="/" data-route="home" data-label="Home" data-layout-label="Home"><span class="nav-label">Home</span></a>
+          <a href="/products" data-route="products" data-label="Sourcing Capabilities" data-layout-label="Sourcing Capabilities"><span class="nav-label">Sourcing Capabilities</span></a>
+          <a href="/canadian-buyers" data-route="buyers" data-label="For Canadian Buyers" data-layout-label="For Canadian Buyers"><span class="nav-label">For Canadian Buyers</span></a>
+          <a href="/chinese-manufacturers" data-route="manufacturers" data-label="For Chinese Manufacturers" data-layout-label="For Chinese Manufacturers"><span class="nav-label">For Chinese Manufacturers</span></a>
+          <a href="/about" data-route="about" data-label="About VICTORIA Canada" data-layout-label="About VICTORIA Canada"><span class="nav-label">About VICTORIA Canada</span></a>
+          <a href="/market-insights" data-route="insights" data-label="Market Insights" data-layout-label="Market Insights"><span class="nav-label">Market Insights</span></a>
+          <a class="nav-cta" href="/request" data-route="request" data-label="Submit Your Request" data-layout-label="Submit Your Request"><span class="nav-label">Submit Your Request</span></a>
           <div class="language-switch" role="group" aria-label="Language selection">
             <button type="button" data-language="en" aria-pressed="true">EN</button>
             <span aria-hidden="true">|</span>
@@ -54,25 +81,25 @@
     <footer class="site-footer">
       <div class="footer-grid">
         <div>
-          <a class="brand brand-light" href="#/">
-            <img class="brand-logo" src="./assets/images/logo-transparent.png" alt="" width="1265" height="1243" loading="lazy" decoding="async" />
-            <span class="brand-copy"><strong>VICTORIA</strong><small>CANADA–CHINA GATEWAY</small></span>
+          <a class="brand brand-light" href="/">
+            <img class="brand-logo" src="/assets/images/logo-64.webp" srcset="/assets/images/logo-64.webp 64w, ./assets/images/logo-128.webp 128w" sizes="58px" alt="" width="128" height="126" loading="lazy" decoding="async" />
+            <span class="brand-copy"><strong>VICTORIA</strong><small>CANADA-CHINA GATEWAY</small></span>
           </a>
           <p class="footer-note">A Canada-based market development platform connecting Canadian businesses with Chinese manufacturing capabilities.</p>
         </div>
         <div>
           <h2 class="footer-heading">Services</h2>
-          <a href="#/canadian-buyers">Sourcing from China</a>
-          <a href="#/chinese-manufacturers">Entering Canada</a>
-          <a href="#/products">Products and opportunities</a>
-          <a href="#/market-insights">Market insights</a>
+          <a href="/canadian-buyers">Sourcing from China</a>
+          <a href="/chinese-manufacturers">Entering Canada</a>
+          <a href="/products">Sourcing capabilities</a>
+          <a href="/market-insights">Market insights</a>
         </div>
         <div>
           <h2 class="footer-heading">Business Enquiries</h2>
-          <a href="mailto:lyneshou79@gmail.com">lyneshou79@gmail.com</a>
+          <a href="mailto:customer@victoria-gateway.com">Customer@victoria-gateway.com</a>
           <a class="contact-phone-nowrap" href="tel:+8613857374817">China Phone / WeChat: +86 138 5737 4817</a>
           <a href="tel:+14372406799">Canada Phone: +1 437 240 6799</a>
-          <a href="#/request">Submit a Project Request</a>
+          <a href="/request">Submit a Project Request</a>
         </div>
       </div>
       <div class="footer-base">
@@ -81,7 +108,7 @@
       </div>
     </footer>
 
-    <script src="./i18n.js"></script>
-    <script src="./script.js"></script>
+    <script src="/i18n.min.js"></script>
+    <script src="/script.min.js?v=20260922-1"></script>
   </body>
 </html>

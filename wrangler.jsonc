@@ -2,7 +2,32 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "victoria-canada",
   "compatibility_date": "2026-09-16",
+  "main": "./src/index.mjs",
   "assets": {
-    "directory": "./public"
-  }
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "routes": [
+    {
+      "pattern": "victoria-gateway.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.victoria-gateway.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.victoria-ccgateway.com",
+      "custom_domain": true
+    }
+  ],
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "lyneshou79@gmail.com",
+      "allowed_sender_addresses": ["website@victoria-gateway.com"]
+    }
+  ]
 }
