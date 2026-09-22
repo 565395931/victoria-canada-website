@@ -40,10 +40,10 @@ npx wrangler login
 npm run deploy
 ```
 
-Node.js 22 LTS is recommended. Wrangler publishes the Worker and `public/` assets together. The production domains and email binding are defined in `wrangler.jsonc`; the destination Gmail address must already be verified in Cloudflare Email Routing.
+Node.js 22 LTS is recommended. Wrangler publishes the Worker and `public/` assets together. The production domains and email binding are defined in `wrangler.jsonc`; `customer@victoria-gateway.com` must remain a verified Cloudflare destination address.
 
 Production site: <https://www.victoria-gateway.com/>
 
 ## Form behavior
 
-The request form posts to `/api/contact`. The Worker sends a notification from `website@victoria-gateway.com` to the verified destination inbox, with the visitor's business email set as Reply-To. Submissions are not stored by the website.
+The request form posts to `/api/contact`. The Worker sends a notification from `website@victoria-gateway.com` to the Zoho-hosted `customer@victoria-gateway.com` inbox, with the visitor's business email set as Reply-To. Submissions are not stored by the website.

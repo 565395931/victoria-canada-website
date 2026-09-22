@@ -104,7 +104,7 @@ async function submitContactForm(request, env) {
 
   try {
     const result = await env.EMAIL.send({
-      to: "lyneshou79@gmail.com",
+      to: "customer@victoria-gateway.com",
       from: { email: "website@victoria-gateway.com", name: "VICTORIA Website" },
       replyTo: { email: data.email, name: data.name },
       subject,
