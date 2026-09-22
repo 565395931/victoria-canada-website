@@ -1,6 +1,6 @@
 # VICTORIA Canada website
 
-A lightweight static company website for VICTORIA Canada. The production-ready files are isolated in `public/`; design references and unused originals are retained in `design-source/` and are not deployed.
+A lightweight bilingual company website for VICTORIA Canada. Static production assets live in `public/`, while the contact-form email endpoint is implemented by the Cloudflare Worker in `src/`.
 
 ## Project structure
 
@@ -8,11 +8,13 @@ A lightweight static company website for VICTORIA Canada. The production-ready f
 public/           Website files uploaded to production
   assets/images/  Full-resolution, web-ready production images
   assets/icons/   Production icons
-design-source/    Original artwork, alternatives and preview screenshots
+src/              Cloudflare Worker and contact-form endpoint
 scripts/          Local validation tools
 server.js         Small local preview server
 wrangler.jsonc    Cloudflare Workers static-assets configuration
 ```
+
+Dependencies, generated reports, build output, design-source files and local Cloudflare state are intentionally excluded from Git.
 
 ## Preview locally
 
@@ -30,19 +32,17 @@ npm run check
 
 ## Deploy to Cloudflare
 
-Install the project dependencies once, sign in to Cloudflare, then deploy:
+Install the project dependencies, sign in to the correct Cloudflare account, then deploy:
 
 ```powershell
-npm install
+npm ci
 npx wrangler login
 npm run deploy
 ```
 
-Node.js 22 LTS is recommended for the Cloudflare deployment tool.
+Node.js 22 LTS is recommended. Wrangler publishes the Worker and `public/` assets together. The production domains and email binding are defined in `wrangler.jsonc`; the destination Gmail address must already be verified in Cloudflare Email Routing.
 
-Wrangler deploys only `public/`. After the first deployment, add the purchased domain from the deployed Worker's **Settings > Domains & Routes > Add > Custom Domain** page in the Cloudflare dashboard.
-
-For a no-command alternative, create a Cloudflare Pages Direct Upload project and drag the entire `public/` folder into the dashboard. Do not upload the repository root because it contains design source files.
+Production site: <https://www.victoria-gateway.com/>
 
 ## Form behavior
 
